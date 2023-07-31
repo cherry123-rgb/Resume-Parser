@@ -1,8 +1,9 @@
+import nltk
 import streamlit as st
 import string
 from resume_parser import resumeparse
 from pyresparser import ResumeParser
-
+nltk.download('stopwords')
 def process_resume_matching(resume_path, requirement_path):
     data = ResumeParser(resume_path).get_extracted_data()
     have_skills = [i for i in data['skills']]
